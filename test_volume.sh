@@ -20,6 +20,6 @@ test_volume 2 3 4 24
 test_volume 1 1 1 1
 test_volume 5 5 5 125
 # Failing test cases
-test_volume 0 3 4 0
-test_volume -1 3 4 -12
-test_volume 2 3 -4 -24
+test_volume 0 3 4 "Invalid input"
+test_volume -1 3 4 "Invalid input"
+test_volume 2 3 -4 "Invalid input"
