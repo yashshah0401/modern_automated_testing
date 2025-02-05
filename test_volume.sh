@@ -11,7 +11,7 @@ test_volume() {
   if [ "$actual_volume" -eq "$expected_volume" ]; then
     echo "Test passed!"
   else
-    echo "Test failed!"
+    echo "Test failed! Expected $expected_volume but got $actual_volume"
   fi
 }
 
@@ -19,3 +19,7 @@ test_volume() {
 test_volume 2 3 4 24
 test_volume 1 1 1 1
 test_volume 5 5 5 125
+# Failing test cases
+test_volume 0 3 4 0
+test_volume -1 3 4 -12
+test_volume 2 3 -4 -24
