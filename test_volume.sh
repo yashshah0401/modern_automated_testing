@@ -5,13 +5,13 @@ test_volume() {
   local height=$1
   local width=$2
   local length=$3
-  local expected_volume=$4
-  local actual_volume=$(./volume.sh $height $width $length)
+  local expected_output=$4
+  local actual_output=$(./volume.sh $height $width $length)
   
-  if [ "$actual_volume" -eq "$expected_volume" ]; then
+  if [ "$actual_output" == "$expected_output" ]; then
     echo "Test passed!"
   else
-    echo "Test failed! Expected $expected_volume but got $actual_volume"
+    echo "Test failed! Expected '$expected_output' but got '$actual_output'"
   fi
 }
 
@@ -23,3 +23,4 @@ test_volume 5 5 5 125
 test_volume 0 3 4 "Invalid input"
 test_volume -1 3 4 "Invalid input"
 test_volume 2 3 -4 "Invalid input"
+
